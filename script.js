@@ -21,6 +21,7 @@ function addMovie(){
     movieImage.className = 'movie-image me-2';
 
     var movieTitle = document.createElement('span');
+    movieTitle.className = 'movie-title';
     movieTitle.textContent = movieName;
 
     movieContent.appendChild(movieImage);
@@ -43,24 +44,20 @@ function addMovie(){
 }
 
 function watchMovie(button){
-
     var listItem = button.parentNode.parentNode;
+    var movieContent = listItem.querySelector('.d-flex .align-items-center');
+    var movieImage = movieContent.querySelector('.movie-image');
+    var movieTitle = movieContent.querySelector('.movie-title').textContent;
 
     var watchedList = document.getElementById('watchedList');
-
     var emotion = prompt('Filmle alakalı görüşlerinizi yazınız:');
-
-    var movieContent = listItem.querySelector('.d-flex .align-items-center');
-
-    var movieImage = movieContent.querySelector('.movie-image');
-
 
     var smallImage = movieImage.cloneNode();
     smallImage.className = 'movie-image me-2';
 
     listItem.innerHTML = '';
     listItem.appendChild(smallImage);
-    listItem.innerHTML+= `<span>${emotion}</span>`;
+    listItem.innerHTML += `<span class="">${movieTitle}</span><span>${emotion}</span>`;
 
     watchedList.appendChild(listItem);
 
