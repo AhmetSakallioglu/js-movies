@@ -1,0 +1,10 @@
+body{
+    padding: 20px;
+}
+#movieList, #watchedList{
+    margin-top: 20px;
+}
+.movie-image{
+    width: 100px;
+    height: 100px;
+}
